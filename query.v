@@ -25,10 +25,15 @@ fn build_query(query map[string]string, symbols []string) string {
 		url += "&base=$query_base"
 	}
 
+	valid_symbols := ["CAD", "HKD", "ISK", "PHP", "DKK", "HUF", "CZK", "AUD", "RON", "SEK", "IDR", "INR", "BRL", "RUB", "HRK", "JPY", "THB", "CHF", "SGD", "PLN", "BGN", "TRY", "CNY", "NOK", "NZD", "ZAR", "USD", "MXN", "ILS", "GBP", "KRW", "MYR", "EUR"]
+
 	// Add currency symbols to url
 	if symbols.len != 0 {
 		mut symbol_string := "&symbols="
 		for index, symbol in symbols {
+			if symbol !in valid_symbols{
+				panic("Invalid symbol: '$symbol'")
+			}
 			if index != symbols.len - 1 {
 				symbol_string += "$symbol,"
 			} else {

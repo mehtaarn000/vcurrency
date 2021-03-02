@@ -3,7 +3,7 @@ import x.json2
 import net.http
 
 // Json object to structure data
-pub struct JSONObject {
+struct JSONObject {
 	pub: 
 		json map[string]json2.Any
 		url string

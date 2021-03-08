@@ -13,7 +13,7 @@ The `get_data` function takes two arguments: `options (type map)` and `symbols (
 
 `get_data` takes arguments: `start_date`, `end_date` (which can both be an empty string to get latest data), and `base` (default "EUR"). 
 
-The `symbols` array should have all the symbols that you would like to get from the API. For example, "USD", "INR", "NZD".
+The `symbols` array should have all the symbols that you would like to get from the API. For example, "USD", "INR", "NZD" (default is all symbols).
 
 ## Example usage
 ```v

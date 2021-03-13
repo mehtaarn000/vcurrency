@@ -20,3 +20,13 @@ fn test_get_data() {
 	assert res.url == 'https://api.exchangeratesapi.io/history?start_at=2021-02-25&end_at=2021-02-26&base=INR&symbols=USD'
 	assert res.json_string == '{"rates":{"2021-02-26":{"USD":0.0135314357},"2021-02-25":{"USD":0.0137678222}},"start_at":"2021-02-25","base":"INR","end_at":"2021-02-26"}'
 }
+
+fn test_convert() {
+	res := convert("USD", 10, "INR") 
+	assert res != 0.0
+}
+
+fn test_convert_on_date() {
+	res := convert_on_date("USD", "2010-01-12", 1, "INR")
+	assert res == 45.7219805262
+}

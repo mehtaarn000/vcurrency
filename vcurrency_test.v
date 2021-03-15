@@ -22,11 +22,6 @@ fn test_get_data() {
 }
 
 fn test_convert() {
-	res := convert("USD", 10, "INR") 
-	assert res != 0.0
-}
-
-fn test_convert_on_date() {
-	res := convert_on_date("USD", "2010-01-12", 1, "INR")
-	assert res == 45.7219805262
+	res := convert("USD", 10, ["INR", "EUR"])
+	assert res["INR"] != 0
 }

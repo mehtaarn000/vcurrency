@@ -17,7 +17,7 @@ The `symbols` array should have all the symbols that you would like to get from 
 
 ## Example usage
 
-Get raw JSON from the API
+Get raw JSON from the API (not reccommended)
 
 ```v
 module main

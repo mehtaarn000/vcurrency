@@ -40,6 +40,7 @@ fn main() {
 ```
 
 Use the `convert` function
+`convert` takes three arguments. `base` (type string), amount (type f64), and symbols (type []string). It returns a `map[string]f64`.
 ```v
 module main
 

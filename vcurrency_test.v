@@ -22,6 +22,6 @@ fn test_get_data() {
 }
 
 fn test_convert() {
-	res := convert("USD", 10, ["INR", "EUR"])
-	assert res["INR"] != 0
+	res := convert('USD', 10, ['INR', 'EUR'])
+	assert res['INR'] != 0
 }

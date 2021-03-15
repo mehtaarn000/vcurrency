@@ -16,6 +16,9 @@ The `get_data` function takes two arguments: `options (type map)` and `symbols (
 The `symbols` array should have all the symbols that you would like to get from the API. For example, "USD", "INR", "NZD" (default is all symbols).
 
 ## Example usage
+
+Get raw JSON from the API
+
 ```v
 module main
 
@@ -33,5 +36,17 @@ fn main() {
     // To get the generated url
     println(data.url)
 
+}
+```
+
+Use the `convert` function
+```v
+module main
+
+import mehtaarn000.vcurrency
+
+fn main() {
+    data := vcurrency.convert("USD", 100, ["EUR", "INR"])
+    println(data)
 }
 ```

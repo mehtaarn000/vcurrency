@@ -17,7 +17,7 @@ The `symbols` array should have all the symbols that you would like to get from 
 
 ## Example usage
 
-Get raw JSON from the API (not reccommended)
+Get raw JSON from the API (not reccommended):
 
 ```v
 module main
@@ -39,8 +39,8 @@ fn main() {
 }
 ```
 
-Use the `convert` function
-`convert` takes three arguments. `base` (type string), amount (type f64), and symbols (type []string). It returns a `map[string]f64`.
+Use the `convert` function:
+`convert` takes three arguments. `base` (type string), `amount` (type f64), and `symbols` (type []string). It returns a `map[string]f64`.
 ```v
 module main
 
@@ -48,6 +48,19 @@ import mehtaarn000.vcurrency
 
 fn main() {
     data := vcurrency.convert("USD", 100, ["EUR", "INR"])
+    println(data)
+}
+```
+
+Or, Use the `convert_on_date` function to convert a value based on the given date:
+`convert_on_date` takes four arguments `base` (type string), `date` (type string in YYYY-MM-DD), `amount` (type f64), and `symbols` (type []string). It returns a `map[string]f64`.
+```v
+module main
+
+import mehtaarn000.vcurrency
+
+fn main() {
+    data := vcurrency.convert_on_date("USD", "2020-01-05", 100, ["EUR", "INR", "CZK"])
     println(data)
 }
 ```

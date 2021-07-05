@@ -67,7 +67,7 @@ pub fn convert(base string, amount f64, symbols []string) map[string]f64 {
 pub fn convert_on_date(base string, date string, amount f64, symbols []string) map[string]f64 {
 	checkdate := validate_date(date)
 
-	if checkdate == false {
+	if !checkdate {
 		panic('Date must be in YYYY-MM-DD format.')
 	}
 
